@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+ 	// Your JavaScript goes here!
+ 	
+   /*This is my Rock, Paper, Scissors game.*/
+
+let playerSelection = prompt("Please select rock, paper, or scissors for our game.");
+
+playerSelection = playerSelection.toUpperCase();
+
+console.log(playerSelection);
+
+let computerSelection = "";
+
+computerSelection = randomSelect();
+
+function randomSelect() {
+
+
+   let randomNum = Math.random();
+   
+   let genNum = Math.ceil(3 * randomNum);
+   
+   console.log(genNum);
+   
+   switch (genNum) {
+   
+   case 1 : computerSelection = "ROCK";
+   
+   break;
+   
+   case 2 : computerSelection = "PAPER";
+   
+   break;
+   
+   case 3 : computerSelection = "SCISSORS";
+   
+   break;
+   
+   default : computerSelection = "There has been a mistake";
+   
+   }
+
+   console.log(computerSelection);
+   
+  return computerSelection;
+}
+
+
+gamePlay(playerSelection, computerSelection);
+
+  
+
+function gamePlay(playerSelection, computerSelection){
+
+
+
+	if (playerSelection == computerSelection) {
+
+	  console.log("Computer selected " + computerSelection + ". It's a tie.");
+
+	} else if (playerSelection == "PAPER" && computerSelection =="ROCK") {
+
+	   console.log ("Computer selected " + computerSelection + ". You win! Paper covers rock.");
+   
+	} else if (playerSelection == "PAPER" && computerSelection =="SCISSORS") {
+
+	   console.log ("Computer selected " + computerSelection + ". You lose! Scissors cuts paper.");
+   
+	} else if (playerSelection == "ROCK" && computerSelection =="PAPER") {
+
+	   console.log ("Computer selected " + computerSelection + ". You lose! Paper covers rock.");
+   
+	} else if (playerSelection == "ROCK" && computerSelection =="SCISSORS") {
+
+	   console.log ("Computer selected " + computerSelection + ". You win! Rock crushes scissors.");
+   
+	} else if (playerSelection == "SCISSORS" && computerSelection =="ROCK") {
+
+	   console.log ("Computer selected " + computerSelection + ". You lose! Rock crushes scissors.");
+   
+	} else if (playerSelection == "SCISSORS" && computerSelection =="PAPER") {
+
+	   console.log ("Computer selected " + computerSelection + ". You win! Scissors cuts paper.");
+   
+	}
+
+} 
+
+  </script>
+</body>
+</html>
